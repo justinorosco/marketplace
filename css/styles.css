@@ -1,0 +1,13 @@
+/* ==========================================================
+   Hoja maestra del backoffice (playground)
+   Reutiliza los design tokens del sitio (../styles.css) y
+   luego importa cada componente en el orden definido.
+   ========================================================== */
+
+@import url("../styles.css");
+@import url("./alerts.css");
+@import url("./botones.css");
+@import url("./checkboxes-radios.css");
+@import url("./dialogs.css");
+@import url("./menus.css");
+@import url("./toasts.css");
