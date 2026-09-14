@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detalle del producto — MarketPlace</title>
+<meta content="Detalle del producto en MarketPlace: descripción, vendedor, condición, forma de pago y opiniones." name="description"/>
+<link href="./styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DG5H7VM4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6DG5H7VM4T');
+</script>
+<!-- Mixpanel -->
+<script type="text/javascript">
+  (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split( " "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat( Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+  mixpanel.init("40dc2a513947b60119089e3505b788e5", { track_pageview: true });
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<!-- Header -->
+<header class="site-header">
+<div class="header-inner container">
+<a aria-label="MarketPlace, ir al inicio" class="brand" href="index.html">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l1.5-5h15L21 9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9 13a3 3 0 0 0 6 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>MarketPlace</span>
+</a>
+<form action="index.html" class="search-form" method="get" role="search">
+<label class="visually-hidden" for="search-input">Buscar productos, categorías, marcas</label>
+<input autocomplete="off" id="search-input" name="q" placeholder="Buscar productos, categorías, marcas..." type="search"/>
+<button aria-label="Buscar" class="search-button" type="submit">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m21 21-4.3-4.3" stroke-linecap="round"></path>
+</svg>
+</button>
+<div class="search-suggestions" hidden="" id="search-suggestions" role="listbox"></div>
+</form>
+<nav aria-label="Navegación principal" class="main-nav">
+<ul>
+<li>
+<a aria-label="Categorías" href="index.html#categorias-populares">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+</svg>
+<span>Categorías</span>
+</a>
+</li>
+<li>
+<a aria-label="Vender" href="index.html#vender">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8" stroke-linecap="round"></path>
+</svg>
+<span>Vender</span>
+</a>
+</li>
+<li>
+<a aria-label="Favoritos" href="#" id="favorites-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+<span>Favoritos</span>
+</a>
+</li>
+<li>
+<a aria-label="Mensajes" href="#" id="messages-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16v12H8l-4 4V4Z" stroke-linejoin="round"></path>
+</svg>
+<span>Mensajes</span>
+</a>
+</li>
+<li>
+<a aria-label="Carrito de compras" href="#" id="cart-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle>
+<path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.8a2 2 0 0 0 2-1.6L21 8H6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Carrito</span>
+<span class="cart-badge" hidden="" id="cart-badge">0</span>
+</a>
+</li>
+<li class="nav-account-item" hidden="" id="nav-account-item">
+<button aria-expanded="false" aria-haspopup="menu" class="account-menu-toggle" id="account-menu-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
+</svg>
+<span>Mi cuenta</span>
+</button>
+<ul class="account-dropdown" hidden="" id="account-menu" role="menu">
+<li role="none"><a href="#" role="menuitem">Mi perfil</a></li>
+<li role="none"><a href="#" role="menuitem">Mis compras</a></li>
+<li role="none"><a href="#" id="logout-link" role="menuitem">Cerrar sesión</a></li>
+</ul>
+</li>
+<li id="nav-login-item">
+<button class="nav-login-btn" id="login-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
+</svg>
+<span>Iniciar sesión</span>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="product-detail-container">
+<div class="container">
+<a class="product-breadcrumb" href="index.html">← Volver a MarketPlace</a>
+<div class="product-detail-layout">
+<div class="product-detail-media">
+<img alt="" class="product-dialog-image" id="product-dialog-image"/>
+<span class="product-dialog-condition" id="product-dialog-condition"></span>
+</div>
+<div class="product-dialog-body">
+<p class="product-dialog-category" id="product-dialog-category"></p>
+<h1 class="product-dialog-title" id="product-dialog-title"></h1>
+<p class="product-rating-summary">
+<span class="stars" id="product-dialog-stars"></span>
+<span id="product-dialog-rating-count"></span>
+</p>
+<p class="product-dialog-price" id="product-dialog-price"></p>
+<p class="product-dialog-location" id="product-dialog-location"></p>
+<p class="product-dialog-description" id="product-dialog-description"></p>
+<div class="product-dialog-seller">
+<p class="product-dialog-box-label">Vendedor</p>
+<p class="product-dialog-seller-name" id="product-dialog-seller-name"></p>
+<p class="product-dialog-seller-rating" id="product-dialog-seller-rating"></p>
+</div>
+<div class="product-dialog-payment">
+<p class="product-dialog-box-label">Métodos de pago aceptados</p>
+<p id="product-dialog-payment"></p>
+</div>
+<div class="product-dialog-actions">
+<button class="btn btn-primary" id="product-dialog-add-cart" type="button">Agregar al carrito</button>
+<button class="btn btn-secondary" id="product-dialog-contact" type="button">Contactar al vendedor</button>
+</div>
+<p aria-live="polite" class="product-dialog-status" id="product-dialog-status"></p>
+</div>
+</div>
+<section aria-labelledby="reviews-title" class="product-reviews">
+<h2 id="reviews-title">Opiniones de compradores</h2>
+<div id="product-reviews-list"></div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<h2 class="visually-hidden">Pie de página</h2>
+<div class="footer-top">
+<div class="footer-col footer-brand">
+<h3 class="footer-logo">MarketPlace</h3>
+<p>La mejor plataforma para comprar y vender cerca de ti.</p>
+<ul aria-label="Redes sociales de MarketPlace" class="social-links">
+<li>
+<a aria-label="Facebook" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.1c0-.95.26-1.6 1.63-1.6H17V3.5C16.7 3.46 15.7 3.4 14.5 3.4c-2.5 0-4.2 1.5-4.2 4.4v2.5H7.5v3.3h2.8V22h3.2Z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="Instagram" href="#">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="Twitter" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.3 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.9c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2Z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="YouTube" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M22 12s0-3-.4-4.4a3 3 0 0 0-2.1-2.1C18 5 12 5 12 5s-6 0-7.5.5A3 3 0 0 0 2.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a3 3 0 0 0 2.1 2.1C6 19 12 19 12 19s6 0 7.5-.5a3 3 0 0 0 2.1-2.1C22 15 22 12 22 12Z"></path>
+<path d="M10 9.5v5l4.5-2.5Z" fill="#12142A"></path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+<nav aria-labelledby="footer-explorar-title" class="footer-col">
+<h3 id="footer-explorar-title">Explorar</h3>
+<ul>
+<li><a href="index.html#categorias-populares">Todas las categorías</a></li>
+<li><a href="index.html#ofertas-del-dia">Ofertas del día</a></li>
+<li><a href="index.html#productos-destacados">Productos destacados</a></li>
+<li><a href="#">Tiendas oficiales</a></li>
+</ul>
+</nav>
+<nav aria-labelledby="footer-ayuda-title" class="footer-col">
+<h3 id="footer-ayuda-title">Ayuda</h3>
+<ul>
+<li><a href="#">Centro de ayuda</a></li>
+<li><a href="#">Cómo comprar</a></li>
+<li><a href="#">Cómo vender</a></li>
+<li><a href="#">Seguridad</a></li>
+<li><a href="https://tally.so/r/lbx07B" onclick="if(window.mixpanel){mixpanel.track('Survey Link Clicked');}" rel="noopener noreferrer" target="_blank">Danos tu opinión</a></li>
+</ul>
+</nav>
+<nav aria-labelledby="footer-empresa-title" class="footer-col">
+<h3 id="footer-empresa-title">Empresa</h3>
+<ul>
+<li><a href="#">Sobre nosotros</a></li>
+<li><a href="#">Trabaja con nosotros</a></li>
+<li><a href="#">Términos y condiciones</a></li>
+<li><a href="#">Política de privacidad</a></li>
+</ul>
+</nav>
+<div class="footer-col footer-suscribe">
+<h3 id="footer-suscribe-title">Suscríbete</h3>
+<p>Recibe las mejores ofertas en tu correo.</p>
+<form action="#" aria-labelledby="footer-suscribe-title" class="subscribe-form" method="post">
+<label class="visually-hidden" for="subscribe-email">Correo electrónico</label>
+<input autocomplete="email" id="subscribe-email" name="email" placeholder="Tu correo electrónico" required="" type="email"/>
+<button type="submit">Suscribirme</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 MarketPlace. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<!-- Iniciar sesión -->
+<dialog aria-labelledby="login-dialog-title" class="login-dialog" id="login-dialog">
+<button aria-label="Cerrar inicio de sesión" class="login-dialog-close" id="login-dialog-close" type="button">×</button>
+<div class="login-dialog-body">
+<h2 id="login-dialog-title">Iniciar sesión</h2>
+<form class="register-form login-form" id="login-form" novalidate="">
+<div class="form-group">
+<label for="login-email">Correo electrónico</label>
+<input aria-describedby="login-email-help login-email-error" autocomplete="email" id="login-email" name="email" required="" type="email"/>
+<div class="form-feedback"><p class="form-help" id="login-email-help">Ejemplo: nombre@correo.com</p><p aria-live="polite" class="form-error" id="login-email-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-password">Contraseña</label>
+<input aria-describedby="login-password-help login-password-error" autocomplete="current-password" id="login-password" minlength="8" name="password" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-password-help">Mínimo 8 caracteres.</p><p aria-live="polite" class="form-error" id="login-password-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-confirm-password">Repetir contraseña</label>
+<input aria-describedby="login-confirm-password-help login-confirm-password-error" autocomplete="new-password" id="login-confirm-password" minlength="8" name="confirmPassword" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-confirm-password-help">Debe coincidir con la contraseña.</p><p aria-live="polite" class="form-error" id="login-confirm-password-error"></p></div>
+</div>
+<button class="btn btn-primary" type="submit">Iniciar sesión</button>
+<p aria-live="polite" class="login-status" id="login-status"></p>
+</form>
+</div>
+</dialog>
+<script defer="" src="./products-data.js"></script>
+<script defer="" src="./script.js"></script>
+<script defer="" src="./producto.js"></script>
+</body>
+</html>

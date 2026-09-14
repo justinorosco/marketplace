@@ -51,6 +51,7 @@
 <path d="m21 21-4.3-4.3" stroke-linecap="round"></path>
 </svg>
 </button>
+<div class="search-suggestions" hidden="" id="search-suggestions" role="listbox"></div>
 </form>
 <nav aria-label="Navegación principal" class="main-nav">
 <ul>
@@ -72,7 +73,7 @@
 </a>
 </li>
 <li>
-<a aria-label="Favoritos" href="#">
+<a aria-label="Favoritos" href="#" id="favorites-link">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
 </svg>
@@ -80,7 +81,7 @@
 </a>
 </li>
 <li>
-<a aria-label="Mensajes" href="#">
+<a aria-label="Mensajes" href="#" id="messages-link">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <path d="M4 4h16v12H8l-4 4V4Z" stroke-linejoin="round"></path>
 </svg>
@@ -88,12 +89,35 @@
 </a>
 </li>
 <li>
-<a aria-label="Mi cuenta" href="#">
+<a aria-label="Carrito de compras" href="#" id="cart-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle>
+<path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.8a2 2 0 0 0 2-1.6L21 8H6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Carrito</span>
+<span class="cart-badge" hidden="" id="cart-badge">0</span>
+</a>
+</li>
+<li class="nav-account-item" hidden="" id="nav-account-item">
+<button aria-expanded="false" aria-haspopup="menu" class="account-menu-toggle" id="account-menu-toggle" type="button">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
 <circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
 </svg>
 <span>Mi cuenta</span>
-</a>
+</button>
+<ul class="account-dropdown" hidden="" id="account-menu" role="menu">
+<li role="none"><a href="#" role="menuitem">Mi perfil</a></li>
+<li role="none"><a href="#" role="menuitem">Mis compras</a></li>
+<li role="none"><a href="#" id="logout-link" role="menuitem">Cerrar sesión</a></li>
+</ul>
+</li>
+<li id="nav-login-item">
+<button class="nav-login-btn" id="login-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
+</svg>
+<span>Iniciar sesión</span>
+</button>
 </li>
 </ul>
 </nav>
@@ -135,12 +159,12 @@
 </div>
 <div class="hero-media">
 <figure class="hero-figure">
-<img alt="Variedad de productos disponibles en el marketplace: tecnología, moda, hogar y vehículos" fetchpriority="high" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
-<div aria-hidden="true" class="carousel-controls">
-<span class="carousel-arrow">‹</span>
-<span class="carousel-arrow">›</span>
+<img alt="Variedad de productos disponibles en el marketplace: tecnología, moda, hogar y vehículos" fetchpriority="high" id="hero-carousel-image" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+<div class="carousel-controls">
+<button aria-label="Imagen anterior" class="carousel-arrow" id="hero-prev" type="button">‹</button>
+<button aria-label="Imagen siguiente" class="carousel-arrow" id="hero-next" type="button">›</button>
 </div>
-<div aria-hidden="true" class="carousel-dots">
+<div aria-hidden="true" class="carousel-dots" id="hero-dots">
 <span></span><span></span><span></span>
 </div>
 </figure>
@@ -152,11 +176,12 @@
 <div class="container">
 <div class="section-header">
 <h2 id="categorias-title">Categorías populares</h2>
-<a class="link-ver-todas" href="#">Ver todas →</a>
+<a class="link-ver-todas" href="productos.html">Ver todas →</a>
 </div>
-<ul class="categorias-grid">
+<div class="categorias-marquee">
+<ul class="categorias-track">
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Tecnolog%C3%ADa">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M11 18h2" stroke-linecap="round"></path>
 </svg>
@@ -164,7 +189,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Veh%C3%ADculos">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <circle cx="7" cy="17" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle>
 <path d="M3 17h2l2-7h8l3 5h3M9 10 11 5h3l2 5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -173,7 +198,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Hogar">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="M4 13h16v6H4z"></path><path d="M5 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke-linecap="round"></path>
 <path d="M6 19v1M18 19v1" stroke-linecap="round"></path>
@@ -182,7 +207,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Moda">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="M8 4 4 8l3 3 2-2v9h6v-9l2 2 3-3-4-4H8Z" stroke-linejoin="round"></path>
 </svg>
@@ -190,7 +215,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Deportes">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <circle cx="12" cy="12" r="9"></circle><path d="m12 3 1.3 4.8L18 9l-4.7 1.2L12 15l-1.3-4.8L6 9l4.7-1.2L12 3Z"></path>
 </svg>
@@ -198,7 +223,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Mascotas">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <circle cx="6" cy="6" r="1.8"></circle><circle cx="12" cy="4.5" r="1.8"></circle><circle cx="18" cy="6" r="1.8"></circle>
 <circle cx="19.5" cy="11.5" r="1.8"></circle>
@@ -208,7 +233,7 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Inmuebles">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="m3 11 9-7 9 7" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -217,7 +242,76 @@
             </a>
 </li>
 <li>
-<a class="categoria-card" href="#">
+<a class="categoria-card" href="productos.html?cat=Otros">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle>
+</svg>
+              Otros
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Tecnolog%C3%ADa" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M11 18h2" stroke-linecap="round"></path>
+</svg>
+              Tecnología
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Veh%C3%ADculos" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="7" cy="17" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle>
+<path d="M3 17h2l2-7h8l3 5h3M9 10 11 5h3l2 5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Vehículos
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Hogar" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M4 13h16v6H4z"></path><path d="M5 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke-linecap="round"></path>
+<path d="M6 19v1M18 19v1" stroke-linecap="round"></path>
+</svg>
+              Hogar
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Moda" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8 4 4 8l3 3 2-2v9h6v-9l2 2 3-3-4-4H8Z" stroke-linejoin="round"></path>
+</svg>
+              Moda
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Deportes" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle><path d="m12 3 1.3 4.8L18 9l-4.7 1.2L12 15l-1.3-4.8L6 9l4.7-1.2L12 3Z"></path>
+</svg>
+              Deportes
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Mascotas" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="6" cy="6" r="1.8"></circle><circle cx="12" cy="4.5" r="1.8"></circle><circle cx="18" cy="6" r="1.8"></circle>
+<circle cx="19.5" cy="11.5" r="1.8"></circle>
+<path d="M9 14c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5c0 2.5-2 3-2 5.5a1.5 1.5 0 0 1-2 0c0-2.5-2-3-2-5.5Z"></path>
+</svg>
+              Mascotas
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Inmuebles" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="m3 11 9-7 9 7" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Inmuebles
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Otros" tabindex="-1">
 <svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle>
 </svg>
@@ -226,13 +320,14 @@
 </li>
 </ul>
 </div>
+</div>
 </section>
 <!-- Productos destacados -->
 <section aria-labelledby="productos-title" class="section-bg" id="productos-destacados">
 <div class="container">
 <div class="section-header">
 <h2 id="productos-title">Productos destacados</h2>
-<a class="link-ver-todas" href="#">Ver todas →</a>
+<a class="link-ver-todas" href="productos.html?tipo=destacados">Ver todas →</a>
 </div>
 <div class="card-grid">
 <article class="product-card">
@@ -363,7 +458,7 @@
 <div class="container">
 <div class="section-header">
 <h2 id="ofertas-title">Ofertas del día</h2>
-<a class="link-ver-todas" href="#">Ver todas →</a>
+<a class="link-ver-todas" href="productos.html?tipo=ofertas">Ver todas →</a>
 </div>
 <div class="card-grid">
 <article class="product-card">
@@ -802,6 +897,32 @@
       }
     });
   </script>
+<!-- Iniciar sesión -->
+<dialog aria-labelledby="login-dialog-title" class="login-dialog" id="login-dialog">
+<button aria-label="Cerrar inicio de sesión" class="login-dialog-close" id="login-dialog-close" type="button">×</button>
+<div class="login-dialog-body">
+<h2 id="login-dialog-title">Iniciar sesión</h2>
+<form class="register-form login-form" id="login-form" novalidate="">
+<div class="form-group">
+<label for="login-email">Correo electrónico</label>
+<input aria-describedby="login-email-help login-email-error" autocomplete="email" id="login-email" name="email" required="" type="email"/>
+<div class="form-feedback"><p class="form-help" id="login-email-help">Ejemplo: nombre@correo.com</p><p aria-live="polite" class="form-error" id="login-email-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-password">Contraseña</label>
+<input aria-describedby="login-password-help login-password-error" autocomplete="current-password" id="login-password" minlength="8" name="password" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-password-help">Mínimo 8 caracteres.</p><p aria-live="polite" class="form-error" id="login-password-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-confirm-password">Repetir contraseña</label>
+<input aria-describedby="login-confirm-password-help login-confirm-password-error" autocomplete="new-password" id="login-confirm-password" minlength="8" name="confirmPassword" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-confirm-password-help">Debe coincidir con la contraseña.</p><p aria-live="polite" class="form-error" id="login-confirm-password-error"></p></div>
+</div>
+<button class="btn btn-primary" type="submit">Iniciar sesión</button>
+<p aria-live="polite" class="login-status" id="login-status"></p>
+</form>
+</div>
+</dialog>
 <script defer="" src="./script.js"></script>
 </body>
 </html>
