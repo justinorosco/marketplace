@@ -48,10 +48,10 @@ if (registerForm) {
         if (!phone)
             return false;
         const value = phone.value.trim();
-        const phonePattern = /^\d{10}$/;
-        if (!value)
+        const digits = value.replace(/\D/g, "");
+        if (!digits)
             return setError(phone, "phone-error", "Ingresa tu número de teléfono.");
-        if (!phonePattern.test(value))
+        if (digits.length !== 10)
             return setError(phone, "phone-error", "Ingresa un teléfono válido de 10 dígitos.");
         return clearError(phone, "phone-error");
     }

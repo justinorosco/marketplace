@@ -1566,16 +1566,17 @@
   }
 }
 
-/* Alineación exacta y uniforme de campos del formulario */
+/* Alineación de campos: el alto crece con el error, no tapa el siguiente input */
 .register-form .form-group {
   display: grid;
-  grid-template-rows: 22px 48px 32px;
+  grid-template-rows: auto 48px auto;
   gap: 6px;
   width: 100%;
   min-width: 0;
-  height: 114px;
+  height: auto;
   align-self: start;
   align-content: start;
+  overflow: hidden;
 }
 
 /* ==========================================================
@@ -2041,20 +2042,37 @@
 
 .product-detail-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 32px;
   background: var(--color-white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   padding: 28px;
   margin-bottom: 32px;
+  min-width: 0;
+  max-width: 100%;
 }
-.product-detail-media { position: relative; }
+.product-detail-media {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+.product-dialog-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+}
+#te-puede-interesar {
+  max-width: 100%;
+  overflow: hidden;
+}
 .product-dialog-image {
   width: 100%;
-  height: 100%;
-  min-height: 360px;
-  max-height: 480px;
+  height: auto;
+  max-height: 420px;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
   border-radius: var(--radius-sm);
@@ -2147,13 +2165,43 @@
 .review-comment { margin: 0; color: var(--color-text); font-size: var(--fs-92); line-height: 1.5; }
 
 @media (max-width: 720px) {
-  .product-detail-layout { grid-template-columns: 1fr; padding: 20px; }
-  .product-dialog-image { min-height: 240px; }
+  .product-detail-layout { grid-template-columns: 1fr; padding: 12px; gap: 12px; }
+  .product-detail-media {
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+    overflow: hidden;
+  }
+  .product-dialog-image {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+    min-height: 0 !important;
+    aspect-ratio: auto;
+    object-fit: cover !important;
+  }
+  .product-dialog-title,
+  .product-dialog-description,
+  .product-dialog-seller-rating {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .product-dialog-actions .btn { width: 100%; }
+  #te-puede-interesar,
+  .product-detail-container .products-marquee,
+  .product-detail-container .rail-static {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 480px) {
-  .product-dialog-image { min-height: 200px; }
-  .product-detail-container { padding: 20px 0 40px; }
+  .product-detail-media,
+  .product-dialog-image {
+    height: 180px !important;
+    max-height: 180px !important;
+  }
+  .product-detail-container { padding: 16px 0 40px; }
   .product-reviews { padding: 18px 20px; }
 }
 
@@ -2259,15 +2307,23 @@
   min-height: 48px;
   box-sizing: border-box;
   margin: 0;
+  font-size: 16px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .register-form .form-feedback {
   display: grid;
   align-content: start;
   gap: 2px;
-  height: 32px;
-  min-height: 32px;
-  overflow: visible;
+  height: auto;
+  min-height: 1.15em;
+  overflow: hidden;
+}
+
+.register-form .form-group:has(input[aria-invalid="true"]) .form-help {
+  display: none;
 }
 
 .register-form .form-feedback .form-help,
@@ -2593,9 +2649,37 @@ html[data-theme="dark"] .hero-figure img {
 
   .catalog-toolbar .price-filter { min-width: 0; }
   .coupon-row { grid-template-columns: 1fr; }
-  .subscribe-form { flex-wrap: wrap; }
+  .subscribe-form {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
   .subscribe-form input,
-  .subscribe-form button { width: 100%; }
+  .subscribe-form button {
+    width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .register-form {
+    grid-template-columns: 1fr !important;
+    padding: 16px 14px 28px;
+    max-width: 100%;
+    gap: 12px;
+  }
+  .register-form .form-group,
+  .register-form .form-consent,
+  .register-form > .form-error,
+  .register-form .register-submit,
+  .register-form .form-status {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+  }
+  .form-group input,
+  .register-form .form-group input {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  #registro { padding-bottom: 48px; }
 
   .ai-assistant { right: 12px; bottom: 12px; }
   .ai-panel { width: min(360px, calc(100vw - 24px)); }

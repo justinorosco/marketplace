@@ -7,6 +7,28 @@
 <title>Detalle del producto — MarketPlace</title>
 <meta content="Detalle del producto en MarketPlace: descripción, vendedor, condición, forma de pago y opiniones." name="description"/>
 <link href="./styles.css" rel="stylesheet"/>
+<style>
+@media (max-width: 900px) {
+  html, body { overflow-x: hidden; }
+  .container, .product-detail-layout, .product-dialog-body { max-width: 100%; min-width: 0; }
+  .product-detail-layout { display: block; }
+  .product-detail-media { height: 200px; max-height: 200px; overflow: hidden; }
+  #product-dialog-image {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+  }
+  .product-dialog-title, .product-dialog-description, .product-dialog-seller-rating {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  #te-puede-interesar, .products-marquee, .rail-static { max-width: 100%; overflow: hidden; }
+  .product-dialog-actions .btn { width: 100%; box-sizing: border-box; }
+}
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DG5H7VM4T"></script>
 <script>
@@ -157,9 +179,9 @@
 <button class="btn btn-secondary" id="product-dialog-contact" type="button">Contactar al vendedor</button>
 </div>
 <p aria-live="polite" class="product-dialog-status" id="product-dialog-status"></p>
+</div>
+</div>
 <section class="rail-section" id="te-puede-interesar"></section>
-</div>
-</div>
 <section aria-labelledby="reviews-title" class="product-reviews">
 <h2 id="reviews-title">Opiniones de compradores</h2>
 <div id="product-reviews-list"></div>
