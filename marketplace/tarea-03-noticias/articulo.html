@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Congreso debate nuevas reglas para el comercio electrónico — Andes Hoy</title>
+  <link rel="stylesheet" href="#" />
+  <style>
+    :root {
+      --white: #ffffff; --bg: #F6F7FB; --border: #E3E6EF; --text: #171A2B;
+      --muted: #666C82; --blue: #2F6FED; --blue-dark: #234FBB; --radius: 14px;
+      --shadow: 0 10px 30px rgba(47, 111, 237, 0.14);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); color: var(--text); line-height: 1.6; }
+    a { color: var(--blue); }
+    .wrap { width: min(760px, calc(100% - 32px)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--border); }
+    .bar { width: min(1120px, calc(100% - 32px)); margin: 0 auto; min-height: 64px; display: flex; align-items: center; gap: 16px; }
+    .brand { font-weight: 800; color: inherit; text-decoration: none; }
+    .brand span { color: var(--blue); }
+    .btn {
+      margin-left: auto; display: inline-flex; border: 0; background: var(--blue); color: #fff;
+      padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; text-decoration: none;
+    }
+    .btn:hover { background: var(--blue-dark); }
+    .kicker { color: var(--blue); font-weight: 800; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.2; letter-spacing: -0.03em; }
+    .meta { color: var(--muted); }
+    figure { margin: 24px 0; }
+    figure img { width: 100%; border-radius: var(--radius); display: block; }
+    figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+    article p { font-size: 1.05rem; }
+    .actions { display: flex; gap: 8px; margin: 28px 0 48px; }
+    .ghost {
+      background: #fff; color: var(--text); border: 2px solid var(--border); padding: 10px 16px;
+      border-radius: 8px; font-weight: 700; cursor: pointer;
+    }
+    .ghost:hover { border-color: var(--blue); color: var(--blue); }
+    .ghost.is-saved { background: #E7F6EC; border-color: #067647; color: #067647; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <a class="brand" href="./index.html">Andes <span>Hoy</span></a>
+      <a class="btn" href="./index.html">Volver al inicio</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <article>
+      <p class="kicker">Política</p>
+      <h1>El Congreso debate nuevas reglas para el comercio electrónico en el país</h1>
+      <p class="meta">Por Redacción Andes Hoy · Quito · Hace 2 horas</p>
+      <figure>
+        <img alt="Personas comprando en un mercado" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80" />
+        <figcaption>El proyecto incluye normas de envío, devolución y publicidad en plataformas digitales.</figcaption>
+      </figure>
+      <p>Asambleístas de distintas bancadas coincidieron en que el país necesita un marco claro para proteger a quien compra y a quien vende en internet. La discusión se centra en plazos de entrega, garantías y transparencia en los precios.</p>
+      <p>Organizaciones de consumidores pidieron que las plataformas muestren de forma visible el estado de cada pedido y un canal de reclamo. Gremios de vendedores, en cambio, piden trámites simples y no duplicar impuestos ya existentes.</p>
+      <p>El texto todavía puede cambiar en el segundo debate. Andes Hoy seguirá la votación y publicará un resumen de lo que sí quedaría obligatorio para las tiendas en línea.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="this.textContent='Compartido'; this.style.opacity='.7'">Compartir</button>
+        <button class="ghost" type="button" onclick="this.classList.toggle('is-saved'); this.textContent=this.classList.contains('is-saved')?'Guardado':'Guardar'">Guardar</button>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

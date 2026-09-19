@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapa — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="productos.html">Productos</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito <span class="cart-badge" hidden id="cart-badge">0</span></a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Ver en mapa</h1>
+<p>Elegí una ciudad y ves los productos publicados ahí.</p>
+<div class="map-cities" id="map-cities"></div>
+<iframe class="city-map" id="city-map" title="Mapa de la ciudad"></iframe>
+<h2 id="map-city-title">Productos</h2>
+<div class="card-grid" id="map-grid"></div>
+<p class="empty-box" hidden id="map-empty">No hay productos en esta ciudad.</p>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const CITIES = {
+    "Guayaquil": [-2.1894, -79.8891],
+    "Quito": [-0.1807, -78.4678],
+    "Cuenca": [-2.9001, -79.0059],
+    "Ambato": [-1.2417, -78.6197],
+    "Manta": [-0.9677, -80.7089],
+    "Loja": [-3.9931, -79.2042],
+    "Machala": [-3.2581, -79.9554],
+    "Riobamba": [-1.6635, -78.6546]
+  };
+  const start = new URLSearchParams(location.search).get("city") || "Guayaquil";
+  const wrap = document.getElementById("map-cities");
+  Object.keys(CITIES).forEach(function (city) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "btn btn-secondary";
+    b.textContent = city;
+    b.addEventListener("click", function () { showCity(city); });
+    wrap.appendChild(b);
+  });
+  function showCity(city) {
+    const pair = CITIES[city] || CITIES.Guayaquil;
+    const lat = pair[0];
+    const lng = pair[1];
+    const d = 0.12;
+    document.getElementById("city-map").src =
+      "https://www.openstreetmap.org/export/embed.html?bbox=" +
+      (lng - d) + "%2C" + (lat - d) + "%2C" + (lng + d) + "%2C" + (lat + d) +
+      "&layer=mapnik&marker=" + lat + "%2C" + lng;
+    document.getElementById("map-city-title").textContent = "Productos en " + city;
+    const grid = document.getElementById("map-grid");
+    const empty = document.getElementById("map-empty");
+    grid.innerHTML = "";
+    const all = typeof PRODUCTS_DETAIL !== "undefined" ? PRODUCTS_DETAIL : [];
+    const list = all.map(function (p, i) { return Object.assign({ id: i }, p); }).filter(function (p) { return p.location === city; }).slice(0, 24);
+    empty.hidden = list.length > 0;
+    list.forEach(function (p) {
+      const a = document.createElement("a");
+      a.className = "rail-card";
+      a.href = "producto.html?id=" + p.id;
+      a.innerHTML = "<img alt=\"\"/><span></span>";
+      a.querySelector("img").src = p.image;
+      a.querySelector("img").alt = p.name;
+      a.querySelector("span").textContent = p.name + " · " + p.price;
+      grid.appendChild(a);
+    });
+  }
+  showCity(CITIES[start] ? start : "Guayaquil");
+});
+</script>
+</body>
+</html>

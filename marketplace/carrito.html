@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carrito — MarketPlace</title>
+<meta content="Revisa tu carrito y paga en MarketPlace." name="description"/>
+<link href="./styles.css" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DG5H7VM4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DG5H7VM4T');
+</script>
+<script async src="https://t.contentsquare.net/uxa/65b8a657a9c95.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav aria-label="Navegación principal" class="main-nav">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="publicar.html">Publicar</a></li>
+<li>
+<a href="carrito.html" id="cart-link">Carrito <span class="cart-badge" hidden="" id="cart-badge">0</span></a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container cart-page">
+<a class="product-breadcrumb" href="index.html">← Seguir comprando</a>
+<h1>Carrito de compras</h1>
+<div id="cart-empty" class="cart-empty-box empty-box" hidden>
+  <p>Tu carrito está vacío.</p>
+  <p>Podés seguir comprando o ver lo que guardaste para después.</p>
+  <a class="btn btn-primary" href="index.html#productos-destacados">Ver productos</a>
+  <a class="btn btn-secondary" href="#later-box">Ver guardados</a>
+</div>
+<div id="cart-layout" class="cart-layout" hidden>
+  <ul id="cart-list" class="cart-list"></ul>
+  <aside class="cart-checkout" id="cart-checkout">
+    <h2>Resumen del pedido</h2>
+    <p class="cart-line"><span>Productos (<span id="cart-count-label">0</span>)</span><span id="cart-subtotal">$0</span></p>
+    <p class="cart-line"><span>Envío</span><span>Gratis</span></p>
+    <p class="cart-line" id="coupon-line" hidden><span>Cupón DENNY10</span><span id="coupon-off">$0</span></p>
+    <p class="cart-total">Total a pagar <strong id="cart-total">$0</strong></p>
+    <div class="coupon-row">
+      <input id="coupon-input" placeholder="Cupón (DENNY10)" type="text"/>
+      <button class="btn btn-secondary" id="coupon-apply" type="button">Aplicar</button>
+    </div>
+    <fieldset class="cart-methods">
+      <legend>Forma de pago</legend>
+      <label class="cart-method"><input checked name="pay" type="radio" value="transfer"/> Transferencia bancaria</label>
+      <label class="cart-method"><input name="pay" type="radio" value="cash"/> Efectivo contra entrega</label>
+      <label class="cart-method"><input name="pay" type="radio" value="card"/> Tarjeta de crédito / débito</label>
+    </fieldset>
+    <div class="bank-box" id="bank-box">
+      <p class="card-box-title">Cuentas para transferir</p>
+      <p class="bank-lead">Titular: <strong>MarketPlace</strong>. Con este nombre nos identificás en el banco.</p>
+      <article class="bank-account">
+        <h3>Banco Guayaquil</h3>
+        <p>Cuenta corriente</p>
+        <p class="bank-number">0041567890</p>
+        <button class="btn btn-secondary copy-acc" data-copy="0041567890" type="button">Copiar cuenta</button>
+      </article>
+      <article class="bank-account">
+        <h3>Banco Pichincha</h3>
+        <p>Cuenta de ahorros</p>
+        <p class="bank-number">2201234567</p>
+        <button class="btn btn-secondary copy-acc" data-copy="2201234567" type="button">Copiar cuenta</button>
+      </article>
+    </div>
+    <div class="card-box" id="card-box" hidden>
+      <p class="card-box-title">Datos de la tarjeta</p>
+      <div class="card-visual">
+        <label class="visually-hidden" for="card-number">Número de tarjeta</label>
+        <input autocomplete="cc-number" id="card-number" inputmode="numeric" maxlength="19" placeholder="•••• •••• •••• ••••"/>
+        <div class="card-visual-row">
+          <div>
+            <label for="card-name">Nombre</label>
+            <input autocomplete="cc-name" id="card-name" placeholder="Como figura en la tarjeta"/>
+          </div>
+          <div>
+            <label for="card-exp">Vence</label>
+            <input autocomplete="cc-exp" id="card-exp" maxlength="5" placeholder="MM/AA"/>
+          </div>
+          <div>
+            <label for="card-cvv">CVV</label>
+            <input autocomplete="cc-csc" id="card-cvv" inputmode="numeric" maxlength="4" placeholder="123"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="cart-pay" type="button">Comprar ahora</button>
+    <p id="cart-pay-status" class="cart-pay-status" role="status"></p>
+  </aside>
+</div>
+<section class="container" id="later-box">
+<h2>Guardado para después</h2>
+<ul id="later-list" class="cart-list"></ul>
+<p class="empty-box" id="later-empty">No hay productos guardados para después.</p>
+</section>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script defer src="./carrito.js"></script>
+</body>
+</html>

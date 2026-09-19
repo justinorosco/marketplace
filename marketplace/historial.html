@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis compras — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Historial de compras</h1>
+<div id="hist-list"></div>
+<p class="empty-box" hidden id="hist-empty">Aún no hay compras. Completá un pedido en el carrito. <a class="btn btn-primary" href="carrito.html">Ir al carrito</a></p>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const box = document.getElementById("hist-list");
+  const empty = document.getElementById("hist-empty");
+  const rows = window.MP ? window.MP.history() : [];
+  if (!rows.length) {
+    if (empty) empty.hidden = false;
+    return;
+  }
+  rows.forEach(function (order) {
+    const art = document.createElement("article");
+    art.className = "publish-data";
+    art.style.marginBottom = "12px";
+    const names = (order.items || []).map(function (i) { return i.name + " x" + (i.qty || 1); }).join(", ");
+    art.innerHTML =
+      "<p><strong>" + (order.total || "") + "</strong> · " + (order.method || "") + "</p>" +
+      "<p>" + names + "</p>" +
+      "<p>" + (order.at || "") + "</p>" +
+      "<p><button class=\"btn btn-primary\" type=\"button\">Comprar de nuevo</button></p>";
+    art.querySelector("button").addEventListener("click", function () {
+      (order.items || []).forEach(function (row) {
+        let product = row;
+        if (window.MP && (row.id === undefined || row.id === "")) {
+          const found = window.MP.catalog().find(function (p) { return p.name === row.name; });
+          if (found) {
+            const idx = window.MP.catalog().indexOf(found);
+            product = { id: String(idx), name: found.name, price: found.price, image: found.image, qty: row.qty || 1 };
+          }
+        }
+        if (typeof addToCart === "function") {
+          const qty = Number(row.qty) || 1;
+          for (let i = 0; i < qty; i += 1) {
+            addToCart({ id: String(product.id || product.name), name: product.name, price: product.price, image: product.image });
+          }
+        }
+      });
+      if (typeof showToast === "function") showToast("Volvió al carrito");
+      window.location.href = "carrito.html";
+    });
+    box.appendChild(art);
+  });
+});
+</script>
+</body>
+</html>

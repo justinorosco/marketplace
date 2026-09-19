@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MarketPlace — Compra y vende lo que quieras</title>
+<meta content="Compra y vende productos cerca de ti de forma simple y rápida." name="description"/>
+<meta property="og:title" content="MarketPlace — Compra y vende lo que quieras"/>
+<meta property="og:description" content="Compra y vende productos cerca de ti de forma simple y rápida."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="MarketPlace — Compra y vende lo que quieras"/>
+<meta name="twitter:description" content="Compra y vende productos cerca de ti de forma simple y rápida."/>
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+<link href="./styles.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DG5H7VM4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6DG5H7VM4T');
+</script>
+<!-- Mixpanel -->
+<script type="text/javascript">
+  (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split( " "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat( Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+  mixpanel.init("40dc2a513947b60119089e3505b788e5", { track_pageview: true });
+</script>
+<!-- Hotjar / Contentsquare -->
+<script async src="https://t.contentsquare.net/uxa/65b8a657a9c95.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<!-- Header -->
+<header class="site-header">
+<div class="header-inner container">
+<a aria-label="MarketPlace, ir al inicio" class="brand" href="#main">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l1.5-5h15L21 9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9 13a3 3 0 0 0 6 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>MarketPlace</span>
+</a>
+<form action="#" class="search-form" method="get" role="search">
+<label class="visually-hidden" for="search-input">Buscar productos, categorías, marcas</label>
+<input autocomplete="off" id="search-input" name="q" placeholder="Buscar productos, categorías, marcas..." type="search"/>
+<button aria-label="Buscar" class="search-button" type="submit">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m21 21-4.3-4.3" stroke-linecap="round"></path>
+</svg>
+</button>
+<div class="search-suggestions" hidden="" id="search-suggestions" role="listbox"></div>
+</form>
+<nav aria-label="Navegación principal" class="main-nav">
+<ul>
+<li>
+<a aria-label="Categorías" href="#categorias-populares">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+</svg>
+<span>Categorías</span>
+</a>
+</li>
+<li>
+<a aria-label="Vender" href="publicar.html">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8" stroke-linecap="round"></path>
+</svg>
+<span>Vender</span>
+</a>
+</li>
+<li>
+<a aria-label="Favoritos" href="#" id="favorites-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+<span>Favoritos</span>
+</a>
+</li>
+<li>
+<a aria-label="Mensajes" href="#" id="messages-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16v12H8l-4 4V4Z" stroke-linejoin="round"></path>
+</svg>
+<span>Mensajes</span>
+</a>
+</li>
+<li>
+<a aria-label="Carrito de compras" href="carrito.html" id="cart-link">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle>
+<path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.8a2 2 0 0 0 2-1.6L21 8H6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Carrito</span>
+<span class="cart-badge" hidden="" id="cart-badge">0</span>
+</a>
+</li>
+<li class="nav-account-item" hidden="" id="nav-account-item">
+<button aria-expanded="false" aria-haspopup="menu" class="account-menu-toggle" id="account-menu-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
+</svg>
+<span>Mi cuenta</span>
+</button>
+<ul class="account-dropdown" hidden="" id="account-menu" role="menu">
+<li role="none"><a href="#" role="menuitem">Mi perfil</a></li>
+<li role="none"><a href="#" role="menuitem">Mis compras</a></li>
+<li role="none"><a href="#" id="logout-link" role="menuitem">Cerrar sesión</a></li>
+</ul>
+</li>
+<li id="nav-login-item">
+<button class="nav-login-btn" id="login-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c1.5-3.5 5-5 7.5-5s6 1.5 7.5 5" stroke-linecap="round"></path>
+</svg>
+<span>Iniciar sesión</span>
+</button>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<!-- Hero -->
+<section aria-labelledby="hero-title" class="hero">
+<div class="container">
+<div class="hero-content">
+<h1 id="hero-title">Compra y vende<br/>lo que quieras</h1>
+<p class="hero-description">Miles de oportunidades cerca de ti.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#productos-destacados">Explorar productos</a>
+<a class="btn btn-secondary" href="publicar.html">Publicar</a>
+</div>
+<ul class="hero-trust">
+<li>
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 3 4 6v6c0 4.5 3.4 7.7 8 9 4.6-1.3 8-4.5 8-9V6l-8-3Z" stroke-linejoin="round"></path>
+</svg>
+              Compra segura
+            </li>
+<li>
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="11" rx="2" width="16" x="4" y="9"></rect><path d="M8 9V6a4 4 0 0 1 8 0v3" stroke-linecap="round"></path>
+</svg>
+              Pago protegido
+            </li>
+<li>
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 15v-3a8 8 0 0 1 16 0v3" stroke-linecap="round"></path>
+<path d="M4 15a2 2 0 0 1 2-2h1v5H6a2 2 0 0 1-2-2Z"></path>
+<path d="M20 15a2 2 0 0 0-2-2h-1v5h1a2 2 0 0 0 2-2Z"></path>
+</svg>
+              Soporte 24/7
+            </li>
+</ul>
+</div>
+<div class="hero-media">
+<figure class="hero-figure">
+<img alt="Zapatillas deportivas en MarketPlace" fetchpriority="high" id="hero-carousel-image" src="img/hero/zapato.png"/>
+<div class="carousel-controls">
+<button aria-label="Imagen anterior" class="carousel-arrow" id="hero-prev" type="button">‹</button>
+<button aria-label="Imagen siguiente" class="carousel-arrow" id="hero-next" type="button">›</button>
+</div>
+<div aria-hidden="true" class="carousel-dots" id="hero-dots">
+<span></span><span></span><span></span>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<!-- Categorías populares -->
+<section aria-labelledby="categorias-title" id="categorias-populares">
+<div class="container">
+<div class="section-header">
+<h2 id="categorias-title">Categorías populares</h2>
+<a class="link-ver-todas" href="productos.html">Ver más →</a>
+</div>
+<div class="categorias-marquee">
+<ul class="categorias-track">
+<li>
+<a class="categoria-card" href="productos.html?cat=Tecnolog%C3%ADa">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M11 18h2" stroke-linecap="round"></path>
+</svg>
+              Tecnología
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Veh%C3%ADculos">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="7" cy="17" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle>
+<path d="M3 17h2l2-7h8l3 5h3M9 10 11 5h3l2 5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Vehículos
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Hogar">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M4 13h16v6H4z"></path><path d="M5 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke-linecap="round"></path>
+<path d="M6 19v1M18 19v1" stroke-linecap="round"></path>
+</svg>
+              Hogar
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Moda">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8 4 4 8l3 3 2-2v9h6v-9l2 2 3-3-4-4H8Z" stroke-linejoin="round"></path>
+</svg>
+              Moda
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Deportes">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle><path d="m12 3 1.3 4.8L18 9l-4.7 1.2L12 15l-1.3-4.8L6 9l4.7-1.2L12 3Z"></path>
+</svg>
+              Deportes
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Mascotas">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="6" cy="6" r="1.8"></circle><circle cx="12" cy="4.5" r="1.8"></circle><circle cx="18" cy="6" r="1.8"></circle>
+<circle cx="19.5" cy="11.5" r="1.8"></circle>
+<path d="M9 14c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5c0 2.5-2 3-2 5.5a1.5 1.5 0 0 1-2 0c0-2.5-2-3-2-5.5Z"></path>
+</svg>
+              Mascotas
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Inmuebles">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="m3 11 9-7 9 7" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Inmuebles
+            </a>
+</li>
+<li>
+<a class="categoria-card" href="productos.html?cat=Otros">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle>
+</svg>
+              Otros
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Tecnolog%C3%ADa" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M11 18h2" stroke-linecap="round"></path>
+</svg>
+              Tecnología
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Veh%C3%ADculos" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="7" cy="17" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle>
+<path d="M3 17h2l2-7h8l3 5h3M9 10 11 5h3l2 5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Vehículos
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Hogar" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M4 13h16v6H4z"></path><path d="M5 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke-linecap="round"></path>
+<path d="M6 19v1M18 19v1" stroke-linecap="round"></path>
+</svg>
+              Hogar
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Moda" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M8 4 4 8l3 3 2-2v9h6v-9l2 2 3-3-4-4H8Z" stroke-linejoin="round"></path>
+</svg>
+              Moda
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Deportes" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle><path d="m12 3 1.3 4.8L18 9l-4.7 1.2L12 15l-1.3-4.8L6 9l4.7-1.2L12 3Z"></path>
+</svg>
+              Deportes
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Mascotas" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="6" cy="6" r="1.8"></circle><circle cx="12" cy="4.5" r="1.8"></circle><circle cx="18" cy="6" r="1.8"></circle>
+<circle cx="19.5" cy="11.5" r="1.8"></circle>
+<path d="M9 14c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5c0 2.5-2 3-2 5.5a1.5 1.5 0 0 1-2 0c0-2.5-2-3-2-5.5Z"></path>
+</svg>
+              Mascotas
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Inmuebles" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="m3 11 9-7 9 7" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              Inmuebles
+            </a>
+</li>
+<li aria-hidden="true">
+<a class="categoria-card" href="productos.html?cat=Otros" tabindex="-1">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle>
+</svg>
+              Otros
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Productos destacados -->
+<section aria-labelledby="productos-title" class="section-bg" id="productos-destacados">
+<div class="container">
+<div class="section-header">
+<h2 id="productos-title">Productos destacados</h2>
+<a class="link-ver-todas" href="productos.html?tipo=destacados">Ver todas →</a>
+</div>
+<div class="products-marquee">
+<div class="products-track">
+<article class="product-card" data-product-index="0">
+<div class="product-media">
+<img alt="iPhone 13 Pro 128GB" loading="lazy" src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar iPhone 13 Pro 128GB a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$450</p>
+<h3 class="product-name">iPhone 13 Pro 128GB</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Guayaquil
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="1">
+<div class="product-media">
+<img alt="Bicicleta Montañera" loading="lazy" src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar Bicicleta Montañera a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$230</p>
+<h3 class="product-name">Bicicleta Montañera</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Quito
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="2">
+<div class="product-media">
+<img alt="Sofá 3 puestos" loading="lazy" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar Sofá 3 puestos a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$120</p>
+<h3 class="product-name">Sofá 3 puestos</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Cuenca
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="3">
+<div class="product-media">
+<img alt="Laptop Dell Inspiron" loading="lazy" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar Laptop Dell Inspiron a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$420</p>
+<h3 class="product-name">Laptop Dell Inspiron</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Guayaquil
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="4">
+<div class="product-media">
+<img alt="Cámara Canon EOS" loading="lazy" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar Cámara Canon EOS a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$190</p>
+<h3 class="product-name">Cámara Canon EOS</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Quito
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="5">
+<div class="product-media">
+<img alt="Mesa de comedor" loading="lazy" src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<button aria-label="Agregar Mesa de comedor a favoritos" class="favorite-btn" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 20s-7-4.35-9.5-8.5C.8 8 2.3 4.5 6 4.5c2 0 3.4 1.1 4 2.4.6-1.3 2-2.4 4-2.4 3.7 0 5.2 3.5 3.5 7-2.5 4.15-9.5 8.5-9.5 8.5Z" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="product-body">
+<p class="price">$150</p>
+<h3 class="product-name">Mesa de comedor</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Cuenca
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="12">
+<div class="product-media">
+<img alt="Camisa Casual Hombre" loading="lazy" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$18</p>
+<h3 class="product-name">Camisa Casual Hombre</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="13">
+<div class="product-media">
+<img alt="Auto Chevrolet Aveo 2015" loading="lazy" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$8.500</p>
+<h3 class="product-name">Auto Chevrolet Aveo 2015</h3>
+<p class="product-location">Quito</p>
+</div>
+</article>
+<article class="product-card" data-product-index="14">
+<div class="product-media">
+<img alt="Freidora de aire 4 litros" loading="lazy" src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$42</p>
+<h3 class="product-name">Freidora de aire 4L</h3>
+<p class="product-location">Cuenca</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Ofertas del día -->
+<section aria-labelledby="ofertas-title" id="ofertas-del-dia">
+<div class="container">
+<div class="section-header">
+<h2 id="ofertas-title">Ofertas del día</h2>
+<a class="link-ver-todas" href="productos.html?tipo=ofertas">Ver todas →</a>
+</div>
+<div class="products-marquee">
+<div class="products-track">
+<article class="product-card" data-product-index="6">
+<div class="product-media">
+<img alt="Smartwatch Xiaomi" loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-20%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$38</p>
+<p class="price-old"><del>$55</del></p>
+</div>
+<h3 class="product-name">Smartwatch Xiaomi</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Guayaquil
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="7">
+<div class="product-media">
+<img alt="Audífonos Bluetooth" loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-15%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$85</p>
+<p class="price-old"><del>$100</del></p>
+</div>
+<h3 class="product-name">Audífonos Bluetooth</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Quito
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="8">
+<div class="product-media">
+<img alt="Monitor 24 pulgadas LG" loading="lazy" src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-10%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$270</p>
+<p class="price-old"><del>$300</del></p>
+</div>
+<h3 class="product-name">Monitor 24" LG</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Cuenca
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="9">
+<div class="product-media">
+<img alt="Zapatillas deportivas" loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-25%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$45</p>
+<p class="price-old"><del>$60</del></p>
+</div>
+<h3 class="product-name">Zapatillas</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Guayaquil
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="10">
+<div class="product-media">
+<img alt="Mochila" loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-18%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$70</p>
+<p class="price-old"><del>$85</del></p>
+</div>
+<h3 class="product-name">Mochila</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Quito
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="11">
+<div class="product-media">
+<img alt="PlayStation 5" loading="lazy" src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-22%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$350</p>
+<p class="price-old"><del>$450</del></p>
+</div>
+<h3 class="product-name">PlayStation 5</h3>
+<p class="product-location">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle>
+</svg>
+                Cuenca
+              </p>
+</div>
+</article>
+<article class="product-card" data-product-index="15">
+<div class="product-media">
+<img alt="Pantalón Jean Clásico" loading="lazy" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-12%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$22</p>
+<p class="price-old"><del>$25</del></p>
+</div>
+<h3 class="product-name">Pantalón Jean Clásico</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="16">
+<div class="product-media">
+<img alt="Alimento para Perros 15kg" loading="lazy" src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-10%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$28</p>
+<p class="price-old"><del>$31</del></p>
+</div>
+<h3 class="product-name">Alimento para Perros 15kg</h3>
+<p class="product-location">Quito</p>
+</div>
+</article>
+<article class="product-card" data-product-index="17">
+<div class="product-media">
+<img alt="Silla de Oficina Ergonómica" loading="lazy" src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+<span class="discount-badge">-15%</span>
+</div>
+<div class="product-body">
+<div class="price-row">
+<p class="price">$75</p>
+<p class="price-old"><del>$88</del></p>
+</div>
+<h3 class="product-name">Silla de Oficina Ergonómica</h3>
+<p class="product-location">Cuenca</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Novedades de la semana -->
+<section aria-labelledby="semana-title" class="section-bg" id="novedades-semana">
+<div class="container">
+<div class="section-header">
+<h2 id="semana-title">Novedades de la semana</h2>
+<a class="link-ver-todas" href="productos.html">Ver todas →</a>
+</div>
+<div class="products-marquee">
+<div class="products-track">
+<article class="product-card" data-product-index="0">
+<div class="product-media">
+<img alt="iPhone 13 Pro 128GB" loading="lazy" src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$450</p>
+<h3 class="product-name">iPhone 13 Pro 128GB</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="6">
+<div class="product-media">
+<img alt="Smartwatch Xiaomi" loading="lazy" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$38</p>
+<h3 class="product-name">Smartwatch Xiaomi</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="11">
+<div class="product-media">
+<img alt="PlayStation 5" loading="lazy" src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$350</p>
+<h3 class="product-name">PlayStation 5</h3>
+<p class="product-location">Cuenca</p>
+</div>
+</article>
+<article class="product-card" data-product-index="3">
+<div class="product-media">
+<img alt="Laptop Dell Inspiron" loading="lazy" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$420</p>
+<h3 class="product-name">Laptop Dell Inspiron</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="13">
+<div class="product-media">
+<img alt="Auto Chevrolet Aveo 2015" loading="lazy" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$8.500</p>
+<h3 class="product-name">Auto Chevrolet Aveo 2015</h3>
+<p class="product-location">Quito</p>
+</div>
+</article>
+<article class="product-card" data-product-index="1">
+<div class="product-media">
+<img alt="Bicicleta Montañera" loading="lazy" src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$230</p>
+<h3 class="product-name">Bicicleta Montañera</h3>
+<p class="product-location">Quito</p>
+</div>
+</article>
+<article class="product-card" data-product-index="9">
+<div class="product-media">
+<img alt="Zapatillas deportivas" loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$45</p>
+<h3 class="product-name">Zapatillas</h3>
+<p class="product-location">Guayaquil</p>
+</div>
+</article>
+<article class="product-card" data-product-index="7">
+<div class="product-media">
+<img alt="Audífonos Bluetooth" loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/>
+</div>
+<div class="product-body">
+<p class="price">$85</p>
+<h3 class="product-name">Audífonos Bluetooth</h3>
+<p class="product-location">Quito</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Beneficios -->
+<section aria-labelledby="beneficios-title" class="section-bg">
+<div class="container">
+<h2 class="visually-hidden" id="beneficios-title">Beneficios del Marketplace</h2>
+<ul class="beneficios-grid">
+<li class="beneficio-item">
+<span class="beneficio-icon">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 3 4 6v6c0 4.5 3.4 7.7 8 9 4.6-1.3 8-4.5 8-9V6l-8-3Z" stroke-linejoin="round"></path>
+</svg>
+</span>
+<h3>Compra segura</h3>
+<p>Tus pagos y datos siempre protegidos.</p>
+</li>
+<li class="beneficio-item">
+<span class="beneficio-icon">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M2 16V7a1 1 0 0 1 1-1h10v10" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13 10h4l4 4v2h-8" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="6" cy="18" r="1.8"></circle><circle cx="17" cy="18" r="1.8"></circle>
+</svg>
+</span>
+<h3>Envíos rápidos</h3>
+<p>Recibe tus productos en tiempo récord.</p>
+</li>
+<li class="beneficio-item">
+<span class="beneficio-icon">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16v12H8l-4 4V4Z" stroke-linejoin="round"></path>
+</svg>
+</span>
+<h3>Chat en tiempo real</h3>
+<p>Habla directamente con el vendedor.</p>
+</li>
+<li class="beneficio-item">
+<span class="beneficio-icon">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 3 4 6v6c0 4.5 3.4 7.7 8 9 4.6-1.3 8-4.5 8-9V6l-8-3Z" stroke-linejoin="round"></path>
+</svg>
+</span>
+<h3>Vendedores verificados</h3>
+<p>Perfiles verificados para tu tranquilidad.</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- Vender -->
+<section aria-labelledby="vender-title" id="vender">
+<div class="container">
+<div class="vender-cta">
+<span aria-hidden="true" class="vender-icon">
+<svg class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="9" cy="8" r="3.2"></circle>
+<path d="M2.5 20c1-3.6 3.7-5.6 6.5-5.6s5.5 2 6.5 5.6" stroke-linecap="round"></path>
+<path d="M18 9v6M15 12h6" stroke-linecap="round"></path>
+</svg>
+</span>
+<div class="vender-text">
+<h2 id="vender-title">¿Tienes algo que vender?</h2>
+<p>Publica tus productos gratis y llega a miles de compradores.</p>
+</div>
+<div class="vender-action">
+<a class="btn btn-primary" href="publicar.html">Publicar mi producto</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Registro -->
+<section aria-labelledby="registro-title" class="register-section" id="registro">
+<div class="container register-layout">
+<div class="register-intro">
+<p class="eyebrow">Únete a MarketPlace</p>
+<h2 id="registro-title">Crea tu cuenta</h2>
+<p>
+          Regístrate para guardar favoritos, contactar vendedores y publicar tus productos.
+        </p>
+<ul aria-label="Beneficios de crear una cuenta" class="register-benefits">
+<li>Guarda tus productos favoritos</li>
+<li>Contacta vendedores fácilmente</li>
+<li>Publica productos cuando quieras</li>
+</ul>
+</div>
+<form aria-labelledby="registro-title" class="register-form" id="register-form" novalidate="">
+<div class="form-group">
+<label for="full-name">Nombre completo</label>
+<input aria-describedby="full-name-error" autocomplete="name" id="full-name" name="fullName" required="" type="text"/>
+<div class="form-feedback"><p aria-live="polite" class="form-error" id="full-name-error"></p></div>
+</div>
+<div class="form-group">
+<label for="register-email">Correo electrónico</label>
+<input aria-describedby="register-email-help register-email-error" autocomplete="email" id="register-email" name="email" required="" type="email"/>
+<div class="form-feedback"><p class="form-help" id="register-email-help">Ejemplo: nombre@correo.com</p><p aria-live="polite" class="form-error" id="register-email-error"></p></div>
+
+</div>
+<div class="form-group">
+<label for="phone">Teléfono</label>
+<input aria-describedby="phone-help phone-error" autocomplete="tel" id="phone" inputmode="tel" name="phone" required="" type="tel"/>
+<div class="form-feedback"><p class="form-help" id="phone-help">Ejemplo: 0991234567</p><p aria-live="polite" class="form-error" id="phone-error"></p></div>
+
+</div>
+<div class="form-group">
+<label for="password">Contraseña</label>
+<input aria-describedby="password-help password-error" autocomplete="new-password" id="password" minlength="8" name="password" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="password-help">Mínimo 8 caracteres.</p><p aria-live="polite" class="form-error" id="password-error"></p></div>
+
+</div>
+<div class="form-group">
+<label for="confirm-password">Confirmar contraseña</label>
+<input aria-describedby="confirm-password-error" autocomplete="new-password" id="confirm-password" minlength="8" name="confirmPassword" required="" type="password"/>
+<div class="form-feedback"><p aria-live="polite" class="form-error" id="confirm-password-error"></p></div>
+</div>
+<div class="form-consent">
+<input aria-describedby="terms-error" id="terms" name="terms" required="" type="checkbox"/>
+<label for="terms">
+            Acepto los términos y condiciones y la política de privacidad.
+          </label>
+</div>
+<p aria-live="polite" class="form-error" id="terms-error"></p>
+<button class="btn btn-primary register-submit" type="submit">
+          Crear cuenta
+        </button>
+<p aria-live="polite" class="form-status" id="form-status" role="status"></p>
+</form>
+</div>
+</section>
+<!-- Métodos de pago y redes sociales -->
+<section aria-labelledby="payment-social-title" class="payment-social">
+<h2 class="visually-hidden" id="payment-social-title">Métodos de pago y redes sociales</h2>
+<div class="container">
+<div class="payment-block">
+<span class="payment-block__label">Métodos de pago aceptados</span>
+<ul aria-label="Métodos de pago aceptados" class="payment-logos">
+<li class="payment-logo payment-logo--visa">VISA</li>
+<li class="payment-logo">
+<span aria-hidden="true" class="mastercard-symbol"></span>
+<span class="mastercard-name">mastercard</span>
+</li>
+<li class="payment-logo payment-logo--paypal">PayPal</li>
+<li aria-label="American Express" class="payment-logo payment-logo--amex">
+            AMERICAN<br/>EXPRESS
+          </li>
+<li class="payment-logo payment-logo--transfer">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10h18M5 10v8M9 10v8M15 10v8M19 10v8M2 18h20M12 3l9 5H3l9-5Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            Transferencia
+          </li>
+</ul>
+</div>
+<div class="social-block">
+<span class="social-block__label">Síguenos en redes</span>
+<nav aria-label="Redes sociales principales" class="social-mini">
+<a aria-label="Facebook" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6H16.8V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V11H7.7v3h2.7v8h3.1Z"></path>
+</svg>
+</a>
+<a aria-label="Instagram" href="#">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+</a>
+<a aria-label="TikTok" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M14 3v10.2a4.3 4.3 0 1 1-3.4-4.2v2.7a1.8 1.8 0 1 0 .9 1.6V3H14Zm0 0c.4 2.2 1.8 3.7 4 4v2.8a8 8 0 0 1-4-1.3V3Z"></path>
+</svg>
+</a>
+<a aria-label="YouTube" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2A29.2 29.2 0 0 0 2 12a29.2 29.2 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2A29.2 29.2 0 0 0 22 12a29.2 29.2 0 0 0-.4-4.8ZM10 15.2V8.8L15.5 12 10 15.2Z"></path>
+</svg>
+</a>
+</nav></div>
+</div>
+
+</section>
+<section aria-labelledby="soporte-title" class="support-section" id="soporte">
+<div class="container">
+<h2 id="soporte-title">Soporte</h2>
+<p class="support-lead">Guías rápidas para comprar, vender y pagar en MarketPlace.</p>
+<ul class="support-grid">
+<li>
+<a class="support-card" href="como-comprar.html" rel="noopener noreferrer" target="_blank">
+<h3>Cómo comprar</h3>
+<p>Elegí un producto, agregalo al carrito y pagá con transferencia, efectivo o tarjeta.</p>
+<span class="support-card-go">Abrir guía →</span>
+</a>
+</li>
+<li>
+<a class="support-card" href="como-vender.html" rel="noopener noreferrer" target="_blank">
+<h3>Cómo vender</h3>
+<p>Publicá con foto, título, precio y descripción. Los compradores te encuentran en el catálogo.</p>
+<span class="support-card-go">Abrir guía →</span>
+</a>
+</li>
+<li>
+<a class="support-card" href="como-pagar.html" rel="noopener noreferrer" target="_blank">
+<h3>Cómo pagar</h3>
+<p>Transferencia bancaria, efectivo contra entrega o tarjeta. Elegís el método en el carrito.</p>
+<span class="support-card-go">Abrir guía →</span>
+</a>
+</li>
+</ul>
+<div class="support-actions">
+<a class="btn btn-primary" href="publicar.html">Quiero vender</a>
+<a class="btn" href="https://tally.so/r/lbx07B" onclick="if(window.mixpanel){mixpanel.track('Survey Link Clicked');}" rel="noopener noreferrer" target="_blank">Enviar una consulta</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container">
+<h2 class="visually-hidden">Pie de página</h2>
+<div class="footer-top">
+<div class="footer-col footer-brand">
+<h3 class="footer-logo">MarketPlace</h3>
+<p>La mejor plataforma para comprar y vender cerca de ti.</p>
+<ul aria-label="Redes sociales de MarketPlace" class="social-links">
+<li>
+<a aria-label="Facebook" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.1c0-.95.26-1.6 1.63-1.6H17V3.5C16.7 3.46 15.7 3.4 14.5 3.4c-2.5 0-4.2 1.5-4.2 4.4v2.5H7.5v3.3h2.8V22h3.2Z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="Instagram" href="#">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="Twitter" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.3 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.9c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2Z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="YouTube" href="#">
+<svg aria-hidden="true" class="icon" fill="currentColor" focusable="false" viewbox="0 0 24 24">
+<path d="M22 12s0-3-.4-4.4a3 3 0 0 0-2.1-2.1C18 5 12 5 12 5s-6 0-7.5.5A3 3 0 0 0 2.4 7.6C2 9 2 12 2 12s0 3 .4 4.4a3 3 0 0 0 2.1 2.1C6 19 12 19 12 19s6 0 7.5-.5a3 3 0 0 0 2.1-2.1C22 15 22 12 22 12Z"></path>
+<path d="M10 9.5v5l4.5-2.5Z" fill="#12142A"></path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+<nav aria-labelledby="footer-explorar-title" class="footer-col">
+<h3 id="footer-explorar-title">Explorar</h3>
+<ul>
+<li><a href="#categorias-populares">Todas las categorías</a></li>
+<li><a href="#ofertas-del-dia">Ofertas del día</a></li>
+<li><a href="#productos-destacados">Productos destacados</a></li>
+<li><a href="mapa.html">Ver en mapa</a></li>
+<li><a href="#novedades-semana">Novedades de la semana</a></li>
+<li><a href="#">Tiendas oficiales</a></li>
+</ul>
+</nav>
+<nav aria-labelledby="footer-ayuda-title" class="footer-col">
+<h3 id="footer-ayuda-title">Ayuda</h3>
+<ul>
+<li><a href="#soporte">Centro de ayuda</a></li>
+<li><a href="como-comprar.html" rel="noopener noreferrer" target="_blank">Cómo comprar</a></li>
+<li><a href="como-vender.html" rel="noopener noreferrer" target="_blank">Cómo vender</a></li>
+<li><a href="como-pagar.html" rel="noopener noreferrer" target="_blank">Cómo pagar</a></li>
+<li><a href="https://tally.so/r/lbx07B" onclick="if(window.mixpanel){mixpanel.track('Survey Link Clicked');}" rel="noopener noreferrer" target="_blank">Danos tu opinión</a></li>
+</ul>
+</nav>
+<nav aria-labelledby="footer-empresa-title" class="footer-col">
+<h3 id="footer-empresa-title">Empresa</h3>
+<ul>
+<li><a href="#">Sobre nosotros</a></li>
+<li><a href="#">Trabaja con nosotros</a></li>
+<li><a href="#">Términos y condiciones</a></li>
+<li><a href="#">Política de privacidad</a></li>
+</ul>
+</nav>
+<div class="footer-col footer-suscribe">
+<h3 id="footer-suscribe-title">Suscríbete</h3>
+<p>Recibe las mejores ofertas en tu correo.</p>
+<form action="#" aria-labelledby="footer-suscribe-title" class="subscribe-form" method="post">
+<label class="visually-hidden" for="subscribe-email">Correo electrónico</label>
+<input autocomplete="email" id="subscribe-email" name="email" placeholder="Tu correo electrónico" required="" type="email"/>
+<button type="submit">Suscribirme</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 MarketPlace. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<!-- Asistente IA -->
+<div class="ai-assistant">
+<button aria-controls="ai-panel" aria-expanded="false" aria-haspopup="dialog" aria-label="Abrir asistente de inteligencia artificial" class="ai-toggle" id="ai-toggle" type="button">
+<svg aria-hidden="true" class="icon" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="11" rx="3" width="14" x="5" y="7"></rect>
+<path d="M9 7V5a3 3 0 0 1 6 0v2M8 12h.01M16 12h.01M9 15h6" stroke-linecap="round"></path>
+</svg>
+</button>
+<div aria-describedby="ai-panel-description" aria-labelledby="ai-panel-title" aria-modal="false" class="ai-panel" hidden="" id="ai-panel" role="dialog">
+<div class="ai-panel__header">
+<div>
+<h2 class="ai-panel__title" id="ai-panel-title">Asistente IA</h2>
+<p class="ai-panel__text" id="ai-panel-description">Encontrar productos, ayuda para vender o soporte.</p>
+</div>
+<button aria-label="Cerrar asistente de inteligencia artificial" class="ai-close" id="ai-close" type="button">×</button>
+</div>
+<div class="ai-actions">
+<a class="ai-action" href="#categorias-populares">Encontrar productos</a>
+<a class="ai-action" href="como-vender.html" rel="noopener noreferrer" target="_blank">Ayuda para vender</a>
+<button class="ai-action" id="ai-support-btn" type="button">Soporte</button>
+</div>
+<div class="ai-chat-box" hidden id="ai-chat-box">
+<div class="ai-chat" id="ai-chat" role="log" aria-live="polite"></div>
+<form class="ai-compose" id="ai-form">
+<label class="visually-hidden" for="ai-input">Escribe tu duda</label>
+<input autocomplete="off" id="ai-input" name="message" placeholder="Escribe tu duda..." type="text"/>
+<button class="btn btn-primary" type="submit">Enviar</button>
+</form>
+</div>
+</div>
+</div>
+<script>
+    const aiToggle = document.getElementById("ai-toggle");
+    const aiPanel = document.getElementById("ai-panel");
+    const aiClose = document.getElementById("ai-close");
+    const aiChatBox = document.getElementById("ai-chat-box");
+    const aiChat = document.getElementById("ai-chat");
+    const aiForm = document.getElementById("ai-form");
+    const aiInput = document.getElementById("ai-input");
+    const aiSupportBtn = document.getElementById("ai-support-btn");
+    let askedUnknown = 0;
+
+    function addAiMessage(text, who) {
+      if (!aiChat) return;
+      const bubble = document.createElement("p");
+      bubble.className = "ai-bubble ai-bubble--" + who;
+      bubble.textContent = text;
+      aiChat.appendChild(bubble);
+      aiChat.scrollTop = aiChat.scrollHeight;
+    }
+
+    function aiReply(raw) {
+      const q = String(raw || "").toLowerCase();
+      if (!q.trim()) return "Escribe tu duda. Si no puedo resolverla, te conecto con un agente.";
+      if (/hola|buenas|hey/.test(q)) return "Hola. Cuéntame tu duda: comprar, vender o pagar. Si no puedo ayudarte, te redirijo con un agente.";
+      if (/vender|publicar|anuncio/.test(q)) return "Para vender, abre la guía Cómo vender: foto, título, precio y descripción. Si se complica, te paso con un agente.";
+      if (/comprar|carrito|pedido/.test(q)) return "Elige un producto, agrégalo al carrito y paga con transferencia, efectivo o tarjeta. Si algo falla, te conecto con un agente.";
+      if (/transfer|banco|guayaquil|pichincha/.test(q)) return "En el carrito, Transferencia bancaria muestra las cuentas de MarketPlace en Banco Guayaquil y Banco Pichincha.";
+      if (/tarjeta|crédito|credito|débito|debito/.test(q)) return "Elige Tarjeta de crédito / débito en el carrito y completa número, nombre, vencimiento y CVV.";
+      if (/efectivo/.test(q)) return "Efectivo contra entrega no pide datos extra. Confirmas el pedido y pagas al recibir.";
+      if (/categoria|categoría|tecnolog|moda|hogar|vehíc|vehic/.test(q)) return "Usa Encontrar productos o Categorías populares para filtrar Tecnología, Vehículos, Hogar, Moda y más.";
+      if (/oferta|descuento|semana|novedad/.test(q)) return "Revisa Ofertas del día y Novedades de la semana en el inicio.";
+      if (/envio|envío|entrega/.test(q)) return "El envío aparece como gratis en el resumen del pedido.";
+      if (/agente|persona|humano|asesor/.test(q)) {
+        window.setTimeout(() => { window.open("hablar-con-agente.html", "_blank", "noopener"); }, 600);
+        return "Te redirijo con un agente en otra pestaña.";
+      }
+      if (/gracias/.test(q)) return "Con gusto. Si queda otra duda, escríbela aquí.";
+      askedUnknown += 1;
+      if (askedUnknown >= 2) {
+        window.setTimeout(() => { window.open("hablar-con-agente.html", "_blank", "noopener"); }, 700);
+        return "No pude resolverlo. Te redirijo con un agente para que te atienda.";
+      }
+      return "No tengo esa respuesta todavía. Reformula tu duda. Si no puedo ayudarte, te redirijo con un agente.";
+    }
+
+    function openAiPanel() {
+      if (!aiPanel) return;
+      aiPanel.hidden = false;
+      aiToggle.setAttribute("aria-expanded", "true");
+    }
+
+    function showSupportChat() {
+      openAiPanel();
+      if (aiChatBox) aiChatBox.hidden = false;
+      if (aiChat && aiChat.childElementCount === 0) {
+        addAiMessage("Hola. Cuéntame tu duda. Si no puedo resolverla, te redirijo con un agente.", "bot");
+      }
+      if (window.mixpanel) window.mixpanel.track("AI Support Opened");
+      window.setTimeout(() => { if (aiInput) aiInput.focus(); }, 50);
+    }
+
+    function closeAiPanel() {
+      if (!aiPanel) return;
+      aiPanel.hidden = true;
+      aiToggle.setAttribute("aria-expanded", "false");
+      aiToggle.focus();
+    }
+
+    aiToggle.addEventListener("click", () => {
+      if (aiPanel.hidden) openAiPanel();
+      else closeAiPanel();
+    });
+    aiClose.addEventListener("click", closeAiPanel);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && aiPanel && !aiPanel.hidden) closeAiPanel();
+    });
+
+    aiSupportBtn.addEventListener("click", showSupportChat);
+
+    aiForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const text = aiInput instanceof HTMLInputElement ? aiInput.value.trim() : "";
+      if (!text) return;
+      addAiMessage(text, "user");
+      aiInput.value = "";
+      const reply = aiReply(text);
+      window.setTimeout(() => addAiMessage(reply, "bot"), 280);
+      if (window.mixpanel) window.mixpanel.track("AI Chat Message", { text: text.slice(0, 80) });
+    });
+  </script>
+<!-- Iniciar sesión -->
+<dialog aria-labelledby="login-dialog-title" class="login-dialog" id="login-dialog">
+<button aria-label="Cerrar inicio de sesión" class="login-dialog-close" id="login-dialog-close" type="button">×</button>
+<div class="login-dialog-body">
+<h2 id="login-dialog-title">Iniciar sesión</h2>
+<form class="register-form login-form" id="login-form" novalidate="">
+<div class="form-group">
+<label for="login-email">Correo electrónico</label>
+<input aria-describedby="login-email-help login-email-error" autocomplete="email" id="login-email" name="email" required="" type="email"/>
+<div class="form-feedback"><p class="form-help" id="login-email-help">Ejemplo: nombre@correo.com</p><p aria-live="polite" class="form-error" id="login-email-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-password">Contraseña</label>
+<input aria-describedby="login-password-help login-password-error" autocomplete="current-password" id="login-password" minlength="8" name="password" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-password-help">Mínimo 8 caracteres.</p><p aria-live="polite" class="form-error" id="login-password-error"></p></div>
+</div>
+<div class="form-group">
+<label for="login-confirm-password">Repetir contraseña</label>
+<input aria-describedby="login-confirm-password-help login-confirm-password-error" autocomplete="new-password" id="login-confirm-password" minlength="8" name="confirmPassword" required="" type="password"/>
+<div class="form-feedback"><p class="form-help" id="login-confirm-password-help">Debe coincidir con la contraseña.</p><p aria-live="polite" class="form-error" id="login-confirm-password-error"></p></div>
+</div>
+<button class="btn btn-primary" type="submit">Iniciar sesión</button>
+<p aria-live="polite" class="login-status" id="login-status"></p>
+</form>
+</div>
+</dialog>
+<script defer="" src="./products-data.js"></script>
+<script defer="" src="./script.js"></script>
+<script defer="" src="./extras.js"></script>
+</body>
+</html>

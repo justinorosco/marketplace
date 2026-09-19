@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andes Hoy — Noticias</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --bg: #F6F7FB;
+      --bg-soft: #EFF2FA;
+      --border: #E3E6EF;
+      --text: #171A2B;
+      --muted: #666C82;
+      --blue: #2F6FED;
+      --blue-dark: #234FBB;
+      --danger: #B42318;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(47, 111, 237, 0.14);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    .skip {
+      position: absolute; left: -999px;
+    }
+    .skip:focus { left: 16px; top: 16px; background: var(--blue); color: #fff; padding: 8px 12px; z-index: 9; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; gap: 20px;
+      min-height: 68px;
+    }
+    .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.03em; }
+    .brand span { color: var(--blue); }
+    nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    nav a, .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px; font-weight: 700; cursor: pointer;
+      transition: background .15s, color .15s, transform .1s, box-shadow .15s, border-color .15s;
+    }
+    nav a {
+      padding: 8px 12px; color: var(--muted); font-size: .92rem;
+    }
+    nav a:hover, nav a:focus-visible { background: var(--bg); color: var(--blue); }
+    nav a.is-active { color: var(--blue); background: #E9F0FF; }
+    .header-actions { margin-left: auto; display: flex; gap: 8px; }
+    .search {
+      display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg);
+    }
+    .search input {
+      border: 0; background: transparent; padding: 8px 12px; width: 180px; font: inherit;
+    }
+    .search input:focus { outline: none; }
+    .search:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(47,111,237,.2); }
+    .search button {
+      border: 0; background: transparent; padding: 8px 12px; cursor: pointer; font-weight: 700; color: var(--blue);
+    }
+    .search button:hover { background: #E9F0FF; }
+    .search button:active { background: #d7e4ff; }
+
+    .btn {
+      border: 2px solid transparent; padding: 10px 16px; font: inherit; font-size: .92rem;
+    }
+    .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+    .btn--primary { background: var(--blue); color: #fff; box-shadow: var(--shadow); }
+    .btn--primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn--primary:active { transform: translateY(0); background: var(--blue-dark); }
+    .btn--primary:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn--ghost { background: #fff; border-color: var(--border); }
+    .btn--ghost:hover { border-color: var(--blue); color: var(--blue); }
+    .btn--ghost.is-saved { background: #E7F6EC; border-color: #067647; color: #067647; }
+
+    /* Hero / H1 */
+    .page-head { padding: 36px 0 12px; }
+    .kicker { color: var(--blue); font-weight: 800; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.03em; margin: 0; }
+
+    /* Layout */
+    main { padding-bottom: 64px; }
+    .featured {
+      display: grid; grid-template-columns: 1.4fr .8fr; gap: 24px; margin-top: 28px;
+    }
+    .article-card {
+      display: flex; flex-direction: column; background: var(--white);
+      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+      transition: transform .15s, box-shadow .15s, border-color .15s;
+    }
+    .article-card:hover, .article-card:focus-within {
+      transform: translateY(-3px); box-shadow: var(--shadow); border-color: #c9d3ea;
+    }
+    .article-card img { width: 100%; height: 220px; object-fit: cover; background: var(--bg); }
+    .article-card--featured img { height: 340px; }
+    .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .chip {
+      align-self: flex-start; font-size: .72rem; font-weight: 800; letter-spacing: .04em;
+      text-transform: uppercase; background: #E9F0FF; color: var(--blue); padding: 4px 8px; border-radius: 6px;
+    }
+    .chip--economia { background: #F1EDFF; color: #5b3fd6; }
+    .chip--deportes { background: #E7F6EC; color: #067647; }
+    .article-card h2, .article-card h3 { margin: 0; font-size: 1.15rem; line-height: 1.3; }
+    .article-card--featured h2 { font-size: clamp(1.4rem, 2.4vw, 1.85rem); }
+    .article-card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .meta { font-size: .8rem; color: var(--muted); }
+    .card-actions { margin-top: auto; padding-top: 10px; display: flex; gap: 8px; }
+
+    .stack { display: flex; flex-direction: column; gap: 12px; }
+    .mini {
+      display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center;
+      border: 1px solid var(--border); border-radius: 12px; padding: 8px; background: #fff;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .mini:hover { border-color: var(--blue); box-shadow: 0 1px 3px rgba(23,26,43,.07); }
+    .mini img { width: 96px; height: 72px; object-fit: cover; border-radius: 8px; }
+    .mini h3 { margin: 0; font-size: .95rem; }
+    .mini .meta { margin: 4px 0 0; }
+
+    .section { margin-top: 48px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; gap: 12px; }
+    .section-head h2 { margin: 0; font-size: 1.35rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-3 .article-card img { height: 160px; }
+
+    .toast {
+      position: fixed; right: 20px; bottom: 20px; background: #067647; color: #fff;
+      padding: 12px 16px; border-radius: 10px; box-shadow: var(--shadow);
+      transform: translateY(120%); transition: transform .2s;
+    }
+    .toast.is-on { transform: translateY(0); }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: .9rem; background: var(--bg); }
+
+    @media (max-width: 900px) {
+      .featured, .grid-3 { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .search input { width: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./index.html">Andes <span>Hoy</span></a>
+      <nav aria-label="Secciones">
+        <ul>
+          <li><a class="is-active" href="./index.html">Inicio</a></li>
+          <li><a href="#politica">Política</a></li>
+          <li><a href="#economia">Economía</a></li>
+          <li><a href="#deportes">Deportes</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <form class="search" role="search" onsubmit="event.preventDefault(); showToast('Mostrando resultados de búsqueda');">
+          <label class="visually-hidden" for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;">Buscar noticias</label>
+          <input id="q" type="search" placeholder="Buscar noticias" />
+          <button type="submit">Buscar</button>
+        </form>
+        <button class="btn btn--primary" type="button">Suscribirse</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <div class="page-head">
+      <p class="kicker">Edición digital · Ecuador</p>
+      <h1>Lo más importante de hoy</h1>
+    </div>
+
+    <div class="featured">
+      <article class="article-card article-card--featured">
+        <img alt="Personas en una feria de productos locales" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80" />
+        <div class="card-body">
+          <span class="chip">Política</span>
+          <h2><a href="./articulo.html">El Congreso debate nuevas reglas para el comercio electrónico en el país</a></h2>
+          <p>El proyecto busca proteger a compradores y vendedores en plataformas digitales, con normas de envío, devolución y publicidad.</p>
+          <p class="meta">Hace 2 horas · Quito</p>
+          <div class="card-actions">
+            <a class="btn btn--primary" href="./articulo.html">Leer artículo</a>
+            <button class="btn btn--ghost" type="button" data-save>Guardar</button>
+          </div>
+        </div>
+      </article>
+
+      <aside class="stack" aria-label="Más leídas">
+        <article class="mini">
+          <img alt="" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=400&q=80" />
+          <div>
+            <h3><a href="./articulo.html">El dólar y el precio de los alimentos en septiembre</a></h3>
+            <p class="meta">Economía · 4 min</p>
+          </div>
+        </article>
+        <article class="mini">
+          <img alt="" src="https://images.unsplash.com/photo-1461896836934-ffe607ba6851?auto=format&fit=crop&w=400&q=80" />
+          <div>
+            <h3><a href="./articulo.html">Triunfo de último minuto deja en euforia al estadio</a></h3>
+            <p class="meta">Deportes · 3 min</p>
+          </div>
+        </article>
+        <article class="mini">
+          <img alt="" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" />
+          <div>
+            <h3><a href="./articulo.html">Startups locales anuncian ronda de inversión conjunta</a></h3>
+            <p class="meta">Economía · 5 min</p>
+          </div>
+        </article>
+      </aside>
+    </div>
+
+    <section class="section" id="economia" aria-labelledby="titulo-economia">
+      <div class="section-head">
+        <h2 id="titulo-economia">Economía</h2>
+        <a href="#economia">Ver todas</a>
+      </div>
+      <div class="grid-3">
+        <article class="article-card">
+          <img alt="Mercado de abastos" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--economia">Economía</span>
+            <h3><a href="./articulo.html">Ferias ciudadanas bajan precios de la canasta básica</a></h3>
+            <p class="meta">Hace 5 horas · Guayaquil</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <img alt="Persona usando un celular para pagar" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--economia">Economía</span>
+            <h3><a href="./articulo.html">Pagos digitales crecen 18% entre vendedores informales</a></h3>
+            <p class="meta">Hace 7 horas · Cuenca</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <img alt="Oficina con computadoras" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--economia">Economía</span>
+            <h3><a href="./articulo.html">PyMES piden créditos más ágiles para reponer inventario</a></h3>
+            <p class="meta">Ayer · Quito</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="deportes" aria-labelledby="titulo-deportes">
+      <div class="section-head">
+        <h2 id="titulo-deportes">Deportes</h2>
+        <a href="#deportes">Ver todas</a>
+      </div>
+      <div class="grid-3">
+        <article class="article-card">
+          <img alt="Cancha de fútbol" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--deportes">Deportes</span>
+            <h3><a href="./articulo.html">La selección cierra la fecha con un empate trabajado</a></h3>
+            <p class="meta">Hace 1 hora</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <img alt="Ciclista en ruta" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--deportes">Deportes</span>
+            <h3><a href="./articulo.html">Tour andino: tres ecuatorianos en el top 10</a></h3>
+            <p class="meta">Hace 6 horas</p>
+          </div>
+        </article>
+        <article class="article-card">
+          <img alt="Piscina olímpica" src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=800&q=80" />
+          <div class="card-body">
+            <span class="chip chip--deportes">Deportes</span>
+            <h3><a href="./articulo.html">Natación: récord nacional en los 200 metros libres</a></h3>
+            <p class="meta">Ayer</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Andes Hoy · Prototipo Tarea 03 · Figma Make / Design</div>
+  </footer>
+  <div class="toast" id="toast" role="status">Guardado en tu lista</div>
+  <script>
+    function showToast(text) {
+      const el = document.getElementById("toast");
+      el.textContent = text;
+      el.classList.add("is-on");
+      setTimeout(() => el.classList.remove("is-on"), 2200);
+    }
+    document.querySelectorAll("[data-save]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const on = btn.classList.toggle("is-saved");
+        btn.textContent = on ? "Guardado" : "Guardar";
+        showToast(on ? "Artículo guardado en tu lista" : "Artículo quitado de tu lista");
+      });
+    });
+  </script>
+</body>
+</html>

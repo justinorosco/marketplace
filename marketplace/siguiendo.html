@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A quienes sigo — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Novedades de quienes seguís</h1>
+<div id="follow-people"></div>
+<div class="card-grid" id="follow-grid"></div>
+<p class="empty-box" hidden id="follow-empty">Todavía no seguís a nadie. Entrá a un producto y tocá <strong>Seguir vendedor</strong>.</p>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const names = window.MP ? window.MP.following() : [];
+  const empty = document.getElementById("follow-empty");
+  const grid = document.getElementById("follow-grid");
+  const people = document.getElementById("follow-people");
+  if (!names.length) {
+    empty.hidden = false;
+    return;
+  }
+  people.textContent = "Seguís a: " + names.join(", ");
+  const items = [];
+  names.forEach(function (name) {
+    window.MP.productsBySeller(name).forEach(function (p) { items.push(p); });
+  });
+  items.slice(0, 30).forEach(function (p) {
+    const a = document.createElement("a");
+    a.className = "rail-card";
+    a.href = "producto.html?id=" + p.id;
+    a.innerHTML = "<img alt=\"\"/><span></span>";
+    a.querySelector("img").src = p.image;
+    a.querySelector("img").alt = p.name;
+    a.querySelector("span").textContent = p.name + " · " + (p.seller && p.seller.name ? p.seller.name : "");
+    grid.appendChild(a);
+  });
+});
+</script>
+</body>
+</html>

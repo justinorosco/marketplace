@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi perfil — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito <span class="cart-badge" hidden id="cart-badge">0</span></a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Mi perfil</h1>
+<div class="profile-card" id="profile-card">
+  <span class="account-avatar" id="profile-letter">?</span>
+  <div>
+    <p class="profile-name" id="profile-name"></p>
+    <p class="profile-email" id="profile-email"></p>
+  </div>
+</div>
+<p class="help-cta"><a class="btn btn-secondary" href="siguiendo.html">A quienes sigo</a> <a class="btn btn-secondary" href="favoritos.html">Favoritos</a></p>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const email = localStorage.getItem("marketplace_user_email") || "";
+  const raw = (localStorage.getItem("marketplace_user_name") || "").trim();
+  const local = email.split("@")[0] || "";
+  const first = (raw || local || "Cuenta").split(/[\s._-]+/).filter(Boolean)[0] || "Cuenta";
+  const display = first.charAt(0).toUpperCase() + first.slice(1);
+  const letterEl = document.getElementById("profile-letter");
+  const nameEl = document.getElementById("profile-name");
+  const emailEl = document.getElementById("profile-email");
+  if (letterEl) letterEl.textContent = display.charAt(0).toUpperCase();
+  if (nameEl) nameEl.textContent = display;
+  if (emailEl) emailEl.textContent = email || "Sin correo";
+});
+</script>
+</body>
+</html>

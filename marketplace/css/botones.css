@@ -1,0 +1,172 @@
+/* ==========================================================
+   Botones
+   ========================================================== */
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-family: var(--font);
+  font-size: var(--fs-92);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+    transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.c-btn:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+.c-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Primario */
+.c-btn--primary {
+  background: var(--color-blue);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.c-btn--primary:hover:not(:disabled) {
+  background: var(--color-blue-dark);
+  transform: translateY(-1px);
+}
+
+.c-btn--primary:active:not(:disabled) {
+  background: var(--color-blue-dark);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(47, 111, 237, 0.25);
+}
+
+.c-btn--primary:disabled {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Secundario */
+.c-btn--secondary {
+  background: var(--color-white);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.c-btn--secondary:hover:not(:disabled) {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.c-btn--secondary:active:not(:disabled) {
+  background: var(--color-bg);
+  border-color: var(--color-blue-dark);
+  color: var(--color-blue-dark);
+}
+
+.c-btn--secondary:disabled {
+  background: var(--color-white);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+/* Destructivo */
+.c-btn--destructive {
+  background: var(--color-danger);
+  color: var(--color-white);
+  box-shadow: 0 8px 20px -8px rgba(180, 35, 24, 0.45);
+}
+
+.c-btn--destructive:hover:not(:disabled) {
+  background: #8C2117;
+  transform: translateY(-1px);
+}
+
+.c-btn--destructive:active:not(:disabled) {
+  background: #8C2117;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(180, 35, 24, 0.3);
+}
+
+.c-btn--destructive:disabled {
+  background: var(--color-danger);
+  color: var(--color-white);
+}
+
+/* Icon button */
+.c-btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.c-btn--icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.c-btn--icon:hover:not(:disabled) {
+  background: var(--color-bg);
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.c-btn--icon:active:not(:disabled) {
+  background: var(--color-bg-soft);
+  color: var(--color-blue-dark);
+}
+
+.c-btn--icon:disabled {
+  background: var(--color-white);
+  color: var(--color-text-muted);
+}
+
+/* Fila de demostración */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.btn-row + .btn-row {
+  margin-top: var(--space-md);
+}
+
+.btn-row-label {
+  width: 100%;
+  font-size: var(--fs-78);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .c-btn {
+    padding: 11px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-row {
+    gap: var(--space-xs);
+  }
+
+  .c-btn {
+    flex: 1 1 auto;
+  }
+}

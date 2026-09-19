@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publicar producto — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DG5H7VM4T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6DG5H7VM4T');
+</script>
+<script async src="https://t.contentsquare.net/uxa/65b8a657a9c95.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito <span class="cart-badge" hidden id="cart-badge">0</span></a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container publish-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Publicar producto</h1>
+<form class="publish-form" id="publish-form">
+  <section class="publish-photo-block" aria-labelledby="photo-title">
+    <h2 id="photo-title">Agregar una imagen</h2>
+    <label class="publish-drop" for="publish-image" id="publish-drop">
+      <input accept="image/*" class="visually-hidden" id="publish-image" name="image" type="file"/>
+      <img alt="" class="publish-preview" hidden id="publish-preview"/>
+      <span class="publish-drop-copy" id="publish-drop-copy">
+        <strong>Arrastrá una foto o hacé clic</strong>
+        <span>JPG o PNG · se ve grande acá, como en un anuncio real</span>
+      </span>
+    </label>
+  </section>
+  <section class="publish-data" aria-labelledby="data-title">
+    <h2 id="data-title">Datos del producto</h2>
+    <div class="publish-two">
+      <div class="form-group">
+        <label for="publish-title">Título</label>
+        <input id="publish-title" name="title" required type="text" placeholder="Ej. iPhone 13 Pro 128GB"/>
+      </div>
+      <div class="form-group">
+        <label for="publish-price">Precio (USD)</label>
+        <input id="publish-price" min="1" name="price" required type="number" placeholder="450"/>
+      </div>
+      <div class="form-group">
+        <label for="publish-condition">Estado del producto</label>
+        <select id="publish-condition" name="condition" required>
+          <option value="">Elegí un estado</option>
+          <option>Nuevo</option>
+          <option>Seminuevo</option>
+          <option>Usado - Buen estado</option>
+          <option>Usado - Aceptable</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="publish-category">Categoría</label>
+        <select id="publish-category" name="category" required>
+          <option>Tecnología</option>
+          <option>Hogar</option>
+          <option>Moda</option>
+          <option>Deportes</option>
+          <option>Vehículos</option>
+          <option>Otros</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="publish-desc">Descripción</label>
+      <textarea id="publish-desc" name="description" required rows="5" placeholder="Qué incluye, zona de entrega, detalles..."></textarea>
+    </div>
+    <button class="btn btn-secondary" id="publish-preview-btn" type="button">Vista previa</button>
+    <button class="btn btn-primary" type="submit">Publicar producto</button>
+    <p id="publish-status" class="cart-pay-status" role="status"></p>
+    <aside class="publish-preview-card" hidden id="publish-live-preview">
+      <p class="card-box-title">Así se verá tu anuncio</p>
+      <img alt="" id="publish-live-img" hidden/>
+      <p class="price" id="publish-live-price"></p>
+      <h3 id="publish-live-title"></h3>
+      <p id="publish-live-meta"></p>
+      <p id="publish-live-desc"></p>
+    </aside>
+  </section>
+</form>
+</div>
+</main>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script defer src="./publicar.js"></script>
+</body>
+</html>

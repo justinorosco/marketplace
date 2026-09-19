@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparar — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="productos.html">Productos</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="productos.html">← Volver a productos</a>
+<h1>Comparar productos</h1>
+<div id="compare-wrap"></div>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const ids = new URLSearchParams(location.search).get("ids") || "";
+  const list = ids.split(",").map(Number).filter(function (n) { return Number.isFinite(n); }).slice(0, 3)
+    .map(function (id) { return window.MP && window.MP.productAt(id); }).filter(Boolean);
+  const wrap = document.getElementById("compare-wrap");
+  if (!list.length) {
+    wrap.innerHTML = "<p class=\"empty-box\">Elegí 2 o 3 productos en el catálogo. <a class=\"btn btn-primary\" href=\"productos.html\">Ir a productos</a></p>";
+    return;
+  }
+  const row = function (label, fn) {
+    return "<tr><th>" + label + "</th>" + list.map(fn).join("") + "</tr>";
+  };
+  wrap.innerHTML = "<table class=\"compare-table\"><tbody>" +
+    row("Foto", function (p) { return "<td><img src=\"" + p.image + "\" alt=\"" + p.name + "\"/></td>"; }) +
+    row("Nombre", function (p) { return "<td><a href=\"producto.html?id=" + p.id + "\">" + p.name + "</a></td>"; }) +
+    row("Precio", function (p) { return "<td>" + p.price + "</td>"; }) +
+    row("Estado", function (p) { return "<td>" + p.condition + "</td>"; }) +
+    row("Ciudad", function (p) { return "<td>" + p.location + "</td>"; }) +
+    row("Stock", function (p) { return "<td>" + (p.stock == null ? "—" : p.stock) + "</td>"; }) +
+    row("Categoría", function (p) { return "<td>" + p.category + "</td>"; }) +
+    "</tbody></table>";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Favoritos — MarketPlace</title>
+<link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+<header class="site-header">
+<div class="header-inner container">
+<a class="brand" href="index.html"><span>MarketPlace</span></a>
+<nav class="main-nav" aria-label="Navegación principal">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="favoritos.html" id="favorites-link">Favoritos</a></li>
+<li><a href="carrito.html" id="cart-link">Carrito <span class="cart-badge" hidden id="cart-badge">0</span></a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="container help-page">
+<a class="product-breadcrumb" href="index.html">← Volver al inicio</a>
+<h1>Favoritos</h1>
+<div class="card-grid" id="fav-grid"></div>
+<p class="empty-box" hidden id="fav-empty">Todavía no tenés favoritos. Tocá el corazón de un producto para guardarlo. <a class="btn btn-primary" href="productos.html">Ver productos</a></p>
+</div>
+</main>
+<script defer src="./products-data.js"></script>
+<script defer src="./script.js"></script>
+<script defer src="./extras.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const grid = document.getElementById("fav-grid");
+  const empty = document.getElementById("fav-empty");
+  const ids = window.MP ? window.MP.favIds() : [];
+  const items = ids.map(function (id) { return window.MP.productAt(id); }).filter(Boolean);
+  if (!items.length) {
+    if (empty) empty.hidden = false;
+    return;
+  }
+  items.forEach(function (p) {
+    const a = document.createElement("a");
+    a.className = "rail-card";
+    a.href = "producto.html?id=" + p.id;
+    a.innerHTML = "<img alt=\"\"/><span></span>";
+    a.querySelector("img").src = p.image;
+    a.querySelector("img").alt = p.name;
+    a.querySelector("span").textContent = p.name + " · " + p.price;
+    grid.appendChild(a);
+  });
+});
+</script>
+</body>
+</html>
